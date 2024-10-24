@@ -1,0 +1,57 @@
+<section>
+
+  <div class='info-user-messages bg-dark p-2'>
+    <%= link_to '', messages_path, class: 'bi bi-arrow-left fs-4 text-white me-3 ms-2' %>
+    <img src="<%= @recipient.avatar %>" class='img-messages'/>
+    <aside class=''>
+      <span> <%= @recipient.nome %> </span>
+      <span> <%= @recipient.email %> </span>
+    </aside>
+  </div>
+
+</section>
+
+<section class='info-user-messages-send'>
+
+  <div class='text-center'>
+
+    <img src="<%= @recipient.avatar %>" class='img-messages-user'/>
+
+    <aside class='aside-info-nome-user'>
+      <span> <%= @recipient.nome %> </span>
+      <span> <%= @recipient.email %> </span>
+    </aside>
+
+    <aside>
+      <span class='text-secondary'>Seguidores <%= @recipient.seguidors.count %> </span>
+      <span class='text-secondary'>Publicações <%= @recipient.posts.count %> </span>
+    </aside>
+
+    <%= link_to 'Ver perfil', "/user/#{@recipient.id}", class: 'btn btn-secondary mt-3' %>
+
+  </div>
+
+</section>
+
+<div class='container' style='margin-bottom: 100px'>
+
+  <div>
+    <% @messages.each do |message| %>  
+      <div class="chat-message <%= message.sender_id == current_user.id ? 'sent' : 'received' %> ">
+        <p> <%= message.content %> </p>
+      </div>
+    <% end %>
+  </div>
+
+</div>
+
+<div class='position-fixed bottom-0 form-message'>
+
+  <form action="/new_message/user/<%=@recipient.id%>" method='post'>
+    <div class='d-flex'>
+      <input type='text' name='mensagem' placeholder='Mensagem...' class='form-control'/>
+      <input type='submit' value='Send' class='btn btn-primary ms-2'/>
+    </div>
+  </form>
+
+</div>

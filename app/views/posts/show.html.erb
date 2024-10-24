@@ -1,0 +1,46 @@
+<section class='section-comentarios bg-dark bg-opacity-75'>
+
+  <div class='post mt-5'>
+    <h4 class='text-white text-center'> <%= @post.titulo %> <h4>
+    <img src="<%= @post.imagem %>"/>
+  </div>
+
+  <div class='mt-4 div-form'>
+  
+    <form action="/new_comentario/post/<%=@post.id%>" method='post'>
+      <div class='d-flex'>
+        <input type='text' name='comentario' placeholder='Deixe seu comentário' class='form-control'/>
+        <input type='submit' value='Comentar' class='btn btn-primary ms-2'/>
+      </div>
+    </form>
+
+  </div>
+
+  <div class='comentarios container'>
+
+    <% if @post.comentarios.count > 0 %>
+      <% @post.comentarios.order(created_at: :desc).each do |comentario| %>
+        <div class='comentario'>
+          <div class='scope'>
+            <img src="<%= comentario.user.avatar %>" class='avatar-comentario'/>
+            <div class='info-user'>
+              <div class='info-comentario'>
+                <span class='text-white ms-2'> <%= comentario.user.nome %>
+                  <span class='text-danger ms-2'> <%= 'Criador' if comentario.user_id == @post.user.id %> </span>
+                </span>
+                <span class='text-white'> <%= comentario.created_at.strftime('%d/%m/%Y') %> </span>
+              </div>
+              <span class='text-white ms-3'> <%= comentario.comentario %> </span>
+            </div>
+          </div>
+          <%= link_to '', comentario_path(comentario), data: {turbo_method: :delete}, class: 'bi bi-trash fs-4 mt-4 text-white' if policy(comentario).destroy? %>
+        </div>
+      <% end %>
+    <% else %>
+      <p class='text-white text-center fs-4'> Sem comentários </p>
+    <% end %>
+  
+
+  </div>
+
+</section>

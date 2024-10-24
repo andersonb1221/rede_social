@@ -1,0 +1,12 @@
+<div class='container-five-users'>
+
+  <% @five_users.each do |user| %>
+    <div>
+      <a href="<%=user_path(user)%>%>">
+        <img src="<%= user.avatar %>" class='img-user'/>
+        <p class='text-center'> <%= user.nome %> </p>
+      </a>
+    </div>
+  <% end %>
+  <hr />
+</div>

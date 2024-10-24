@@ -1,0 +1,10 @@
+<% @seguidos.each do |seguido| %>
+
+  <a href="/show/seguido/<%=seguido.id%>">
+    <div class='seguidos'>
+      <img src="<%= seguido.avatar %>" class='img-seguidores-user'/>
+      <p> <%= seguido.nome %> </p>
+    </div>
+  </a>
+
+<% end %>

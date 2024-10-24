@@ -1,0 +1,23 @@
+<div class='page-lateral col-2 p-3'>
+
+  <di class='info bg-white mb-4 p-3 rounded'>
+    <%= link_to 'Olá, mundo!', "#" %>
+    <%= link_to 'Outro olá, mundo!', "#" %>
+  </di>
+
+  <div class='info bg-white mb-4 p-3 rounded'>
+    <%= link_to 'Home', "#",class: 'fw-bold text-primary fs-4' %>
+    <hr/>
+    <%= link_to 'Messages', messages_path %>
+  </div>
+
+  <div class='info bg-white mb-4 p-3 rounded'>
+    <%= link_to 'Messages', "#", class: 'text-primary fw- mb-3' %>
+    <%= link_to 'Trending', "#", class: 'text-primary fw- mb-3' %>
+    <%= link_to 'Topics', "#", class: 'text-primary fw- mb-3' %>
+    <%= link_to 'Novo post', new_post_path, class: 'text-primary fw- mb-3' %>
+    <%= link_to 'Seguidores', "/seguidores/user/#{current_user.id}", class: 'text-primary fw- mb-3' %>
+    <%= link_to 'Seguindo', "/seguidos/user/#{current_user.id}", class: 'text-primary fw- mb-3' %>
+  </div>
+
+</div>

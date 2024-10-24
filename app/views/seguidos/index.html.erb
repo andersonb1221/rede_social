@@ -1,0 +1,15 @@
+<section class='section-seguidores'>
+  <%= render 'header' %>
+</section>
+
+<section class='seguidores'>
+
+  <% if @user.seguidos.count > 0 %>
+    <%= render 'form' %>
+    <%= render 'seguidos' %>
+  <% else %>
+    <p class='text-white fw-bold fs-4 text-center'> Este usuário não segue ninguém no momento</p>
+  <% end %>
+
+
+</section>

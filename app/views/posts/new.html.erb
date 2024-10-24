@@ -1,0 +1,17 @@
+<div class='form-new-post'>
+  <%= form_with model: @post do |f| %>
+  
+    <div class='mb-4 text-center'>
+      <%= f.label :titulo, class: 'fs-4 text-white' %>
+      <%= f.text_field :titulo, class: 'form-control' %>
+    </div>
+  
+    <div class='mb-4 text-center'>
+      <%= f.label :imagem, class: 'fs-4 text-white' %>
+      <%= f.file_field :imagem, class: 'form-control' %>
+    </div>
+  
+    <%= f.submit class: 'btn btn-primary' %>
+  
+  <% end %>
+</div>

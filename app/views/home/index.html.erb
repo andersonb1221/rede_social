@@ -1,0 +1,72 @@
+<section class='home-page container'>
+
+  <h2 class='text-white'>Login</h2>
+
+  <form>
+    <div>
+      <input type='text' name='user' placeholder='Buscar pelo usuário'/>
+    </div>
+  </form>
+
+  <aside class='p-3'>
+    <i class="bi bi-android2 text-white fs-4 me-3"></i>
+    <i class="bi bi-apple text-white fs-4"></i>
+  </aside>
+
+  <div class='pergunta'>
+    <span>Qual <span class='fw-bold'>conta</span> você gostaria de analisar?</span>
+    <span> Usuário não listado? </span>
+  </div>
+
+  <div class='info-users-login'>
+    <% @users.each do |user| %>
+      <div class='me-5 mb-4'>
+        <a href="<%= new_user_session_path %>" class='users'>
+          <img src="<%= user.avatar %>" class='img-user shadow'/>
+          <span class='text-white'> <%= user.nome %> </span>
+        </a>
+      </div>
+    <% end %>
+
+    <div class='new-user'>
+      <%= link_to '', new_user_registration_path, class: 'bi bi-plus-lg fs-2 text-white' %>
+      <span class='text-white'>Criar nova conta</span>
+    </div>
+
+  </div>
+
+  <div class='posts-home'>
+    <p class='text-white text-center'>Acesse para ver muito mais publicações</p>
+
+    <div class='imgs-publicacoes mt-5'>
+    
+      <div>
+        <img src='/imgs/cristiano.jpg'/>
+        <span class='nome'>Cristiano Ronaldo</span>
+      </div>
+
+      <div>
+        <img src='/imgs/messi.webp'/>
+        <span class='nome'>Messi</span>
+      </div>
+
+      <div>
+        <img src='/imgs/neymar.jpg'/>
+        <span class='nome'>Neymar jr</span>
+      </div>
+
+      <div>
+        <img src='/imgs/larissa.jpeg'/>
+        <span class='nome'>Larissa Manoela</span>
+      </div>
+
+      <div>
+        <img src='/imgs/maisa.webp'/>
+        <span class='nome'>Maisa</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

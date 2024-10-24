@@ -1,0 +1,43 @@
+@media (min-width: 500px) and (max-width: 850px) {
+
+  .home-user {
+    flex-direction: column;
+    align-items: center;
+
+    & img {
+      margin-bottom: 15px;
+    }
+  }
+
+  .homer-bio-user, .linguagem {
+    display: none;
+  }
+
+  .date {
+    width: 200px !important;
+    margin-left: 80px;
+  }
+
+  .nav-links-home {
+    width: 400px !important;
+  }
+  
+  .container-principal {
+    flex-direction: column;
+    padding: 10px;
+
+    & .page-lateral, .sobre, .user-sugestao {
+      width: 100%;
+      margin-bottom: 5%;
+    }
+
+    & .user-sugestao {
+      height: 100%;
+    }
+  }
+
+  .container-five-users, .qtde-seguidores {
+   display: none !important;
+  }
+
+}

@@ -1,0 +1,69 @@
+@media (min-width: 500px) and (max-width: 850px) {
+
+  .container-show-user {
+    overflow: hidden;
+  }
+
+  .header-user-show {
+    flex-direction: column;
+  }
+
+  .links-show {
+    width: 500px;
+  }
+
+  .info-user-show {
+    width: 120px !important;
+  }
+
+  .container-show {
+
+    & .users-show {
+      display: none !important;
+    }
+
+    & .publicacoes {
+      justify-content: center !important;
+    }
+  }
+
+}
+
+@media (max-width: 1600px) {
+
+  .pt-bottom-perfil {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .perfil-left {
+    border-right: 0px solid transparent !important;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 100% !important;
+    flex-direction: row !important;
+  }
+
+  .info-user-perfil {
+    width: 300px !important;
+  }
+
+  .pt-info-perfil-user {
+    width: 100% !important;
+  }
+
+  .sugestoes-user-perfil {
+    display: none;
+  }
+
+  .pt-sugestoes {
+    display: none !important;
+  }
+
+  .overflow-perfil {
+    overflow-y: hidden;
+    width: 100% !important;
+    height: 100% !important;
+  }
+}

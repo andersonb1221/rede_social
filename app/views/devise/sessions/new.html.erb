@@ -1,0 +1,28 @@
+<section class='sessions-devise'>
+  <div class='div-form bg-dark bg-opacity-50 p-4' style='width: 800px'>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="field mb-4">
+        <%= f.label :email, class: 'form-label fs-4 text-white' %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'input-text form-control', placeholder:'Digite seu email' %>
+      </div>
+    
+      <div class="field mb-4">
+        <%= f.label :password, class: 'form-label fs-4 text-white' %><br />
+        <%= f.password_field :password, autocomplete: "current-password", class: 'input-text form-control', placeholder:'Digite sua senha' %>
+      </div>
+    
+      <% if devise_mapping.rememberable? %>
+        <div class="field mb-4">
+          <%= f.check_box :remember_me%>
+          <%= f.label :remember_me, class: 'text-white' %>
+        </div>
+      <% end %>
+    
+      <div class="actions">
+        <%= f.submit "Log in", class: 'btn btn-primary' %>
+      </div>
+    <% end %>
+    
+    <%= render "devise/shared/links" %>
+  </div>
+</section>

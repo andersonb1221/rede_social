@@ -1,0 +1,12 @@
+@media (min-width: 500px) and (max-width: 850px) {
+
+    .section-comentarios {
+      width: 100%;
+      padding: 10px;
+
+      & div.post img, .div-form, .comentarios {
+        width: 100% !important;
+      }
+    }
+
+}

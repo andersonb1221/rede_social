@@ -1,0 +1,104 @@
+<section class='container container-show-user'>
+
+  <div class='d-flex header-user-show'>
+
+    <img src="<%=@user.avatar%>" class='img-user-show'/>
+
+    <aside class='ms-4 mt-4'>
+      <h3 class='text-white'> <%= @user.nome %> </h3>
+      <p class='text-white'> <%= @user.bio %> </p>
+      
+      <ul class='nav links-show'>
+       
+        <% if @ja_seguindo %>
+          <li>
+            <%= link_to 'Deixar de seguir', unfollow_user_path(@user), data: {turbo_method: :delete}, class: 'nav-link fw-bold text-white bg-primary rounded' %>
+          </li>
+        <% else %>
+          <li class='nav-item'>
+            <%= link_to 'Seguir', follow_user_path(@user), data: {turbo_method: :post}, class: 'nav-link fw-bold text-white bg-primary rounded' %>
+          </li>
+        <% end %>
+        
+        <li class='nav-item'> <%= link_to 'Conversar', "#", class: 'nav-link bg-secondary bg-opacity-25 ms-3 rounded text-white' %> </li>
+        <li class='nav-item'> <%= link_to 'Home', '/page_inicial', class: 'nav-link bg-secondary bg-opacity-25 ms-3 rounded text-white' %> </li>
+
+      </ul>
+    </aside>
+
+  </div>
+
+  <div class='mt-5 d-flex justify-content-around'>
+  
+    <a href="/seguidores/user/<%=@user.id%>" class='info-user-show shadow'>
+      <span>Seguidores</span>
+      <h4> <%= @user.seguidors.length %> </h4>
+    </a>
+
+    <a href="/seguidos/user/<%=@user.id%>" class='info-user info-user-show'>
+      <span>Seguindo</span>
+      <h4> <%= @user.seguidos.length %> </h4>
+    </a>
+
+    <a href="/user/<%=@user.id%>" class='info-user info-user-show'>
+      <span>Publicações</span>
+      <h4> <%= @user.posts.count %> </h4>
+    </a>
+
+  </div>
+
+  <div class='mt-5'>
+  
+  <div class='container-show'>
+  
+    <div class='users-show'>
+      <% @users.each do |user| %>
+        <a href="/user/<%=user.id%>" class='d-flex w-100 ms-2 p-1 mb-2 rounded-4' style='background-color: #001f36'>
+      
+          <img src="<%= user.avatar %>" style='width: 60px; height: 60px; border-radius: 50%'/>
+      
+          <div class='ms-2'>
+      
+            <aside class='text-white'>
+              <p class='m-0'><%= user.nome %></p>
+              <p class='m-0'> <%= truncate(user.bio, length: 10) %> </p>
+            </aside>
+      
+          </div>
+        </a>
+      <% end %>
+    </div>
+
+    <div class='publicacoes'>
+
+      <% @user.posts.each do |post| %>
+
+        <div class='mb-4'>
+
+          <aside>
+            <p class='text-white pt-3'> <%= post.titulo %> </p>
+          </aside>
+
+          <img src="<%= post.imagem %>"/>
+
+          <ul class='nav'>
+
+            <% if current_user.liked_posts.include?(post) %>
+              <%= link_to "#{post.liked_by_posts.count}", post_like_path(post), data: {turbo_method: :delete}, class: 'bi bi-hand-thumbs-up-fill fs-4 text-white btn' %>
+            <% else %>
+              <%= link_to "#{post.liked_by_posts.count}", post_likes_path(post), data: {turbo_method: :post}, class: 'bi bi-hand-thumbs-up fs-4 text-white btn' %>
+            <% end %>
+
+            <%= link_to "#{post.comment_by_posts.count}", post_path(post), class: 'bi bi-chat-square-dots text-white fs-4 btn mt-1' %>
+              
+          </ul>
+
+        </div>
+
+      <% end %>
+
+    </div>
+
+  </div>
+
+</section>

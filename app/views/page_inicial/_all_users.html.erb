@@ -1,0 +1,28 @@
+<div class='user-sugestao col-5'>
+
+  <%= render 'five_users' %>
+
+  <% @users.each do |user| %>
+    <div class='container-all-users'>
+  
+      <a href="<%=user_path(user)%>">
+        <img src="<%= user.avatar %>" class='img-user'/>
+      </a>  
+  
+      <div>
+  
+        <aside>
+          <h4><%= user.nome %></h4>
+          <p> <%= truncate(user.bio, length: 30) %> </p>
+        </aside>
+  
+        <aside class='qtde-seguidores'>
+          <span>2 Seguidores</span>
+          <%= link_to 'Seguir', "/seguir/#{user.id}", class: 'btn btn-secondary' %>
+        </aside>
+        
+      </div>
+    </div>
+  <% end %>
+
+</div>

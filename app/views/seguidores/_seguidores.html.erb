@@ -1,0 +1,19 @@
+<% @seguidores.each do |seguidor| %>
+
+  <% if seguidor.nome == current_user.nome %>
+  <a href="/perfil">
+    <div class='seguidor'>
+      <img src="<%= seguidor.avatar %>" class='img-seguidores-user'/>
+      <p> <%= seguidor.nome %> </p>
+    </div>
+  </a>
+  <% else %>
+    <a href="/show/seguidor/<%=seguidor.id%>">
+      <div class='seguidor'>
+        <img src="<%= seguidor.avatar %>" class='img-seguidores-user'/>
+        <p> <%= seguidor.nome %> </p>
+      </div>
+    </a>
+  <% end %>
+
+<% end %>

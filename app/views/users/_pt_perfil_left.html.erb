@@ -1,0 +1,18 @@
+<div class='perfil-left col-2 mt-5'>
+
+  <img src="<%=current_user.avatar%>"/>
+  
+  <%= link_to "Seguidores #{current_user.seguidors.length}", "/seguidores/user/#{current_user.id}", class: 'info-user-perfil' %>
+  <%= link_to "Seguindo #{current_user.seguidos.length}", "/seguidos/user/#{current_user.id}", class: 'info-user-perfil' %>
+  <%= link_to "Publicações #{current_user.posts.length}", "#", class: 'info-user-perfil' %>
+
+  <div class='mt-4 sugestoes-user-perfil'>
+    <h4 class='text-center text-white'>Sugestões</h4>
+    <div class='imgs-perfil'> 
+      <% @users.each do |user| %>
+        <a href="/user/<%=user.id%>"><img src="<%=user.avatar%>" class='img-sugestao-perfil'/></a>
+      <% end %>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,27 @@
+<section class='container pt-5'>
+
+  <form>
+    <div class='d-flex'>
+      <input type='text' name='user' placeholder='Pesquisar' class='form-control'/>
+      <input type='submit' value='Buscar' class='btn btn-primary ms-2'/>
+    </div>
+  </form>
+
+  <hr class='text-white'/>
+
+  <div>
+    <h3 class='text-white'>Mensagens</h3>
+    <% @users.each do |user| %>
+      <a href="<%= message_path(user) %>" class='mb-4 d-block user-messages p-1'>
+        <div class='info-user-messages'>
+          <img src="<%= user.avatar %>" class='img-messages'/>
+          <aside>
+            <span> <%= user.nome %> </span>
+            <span>-----</span>
+          </aside>
+        </div>
+    </a>
+    <% end %>
+  </div>
+
+</section>

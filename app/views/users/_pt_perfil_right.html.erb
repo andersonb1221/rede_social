@@ -1,0 +1,29 @@
+<div class='col-3 mt-5 overflow-perfil'>
+
+  <h3 class='text-white text-center mb-4'>Publicações</h3>
+
+  <% if current_user.posts.count > 0 %>
+
+    <% current_user.posts.each do |post| %>
+      <div class='text-center'>
+    
+        <aside>
+          <p class='text-white'> <%= post.titulo %> </p>
+        </aside>
+    
+        <img src="<%= post.imagem %>" class='img-post-perfil'/>
+    
+        <ul class='nav bg-secondary mx-auto p-1' style='width: 90%'>
+          <li class='fs-4 text-white'> <i class="bi bi-hand-thumbs-up"></i><%= post.liked_by_posts.count %> </li>
+          <li class='fs-4'> <%= link_to "#{post.comment_by_posts.count}", post_path(post), class: 'bi bi-chat-square-dots text-white ms-4' %> </li>
+        </ul>
+    
+      </div>
+      <hr class='text-white'/>
+    <% end %>
+
+  <% else %>
+    <p class='text-white fs-4 text-center'>Sem publicações</p>
+  <% end %>
+
+</div>

@@ -1,0 +1,84 @@
+.user-sugestao {
+  overflow-y: auto;
+  height: 600px;
+  padding: 10px;
+  background-color: #e1e6e3;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.container-all-users {
+  display: flex;
+  padding: 10px;
+  
+  & div {
+    border-bottom: 1px solid gray;
+    padding: 5px;
+    width: 100%;
+    margin: 0 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.container-five-users {
+  background-color: #e1e6e3;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 10px;
+  height: 150px;
+}
+
+.home-user {
+  display: flex;
+  padding: 50px;
+
+  & div.info-user {
+    margin-left: 30px;
+
+    & div {
+      display: flex;
+    }
+
+    & div > p.date {
+      background-color: white;
+      width: 100%;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50px;
+    }
+  }
+
+  & .nav-links-home {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: white;
+    border-radius: 50px;
+    width: 100%;
+  }
+}
+
+.container-principal {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.page-lateral {
+  background-color: #e1e6e3;
+  border-radius: 10px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.sobre {
+  background-color: #e1e6e3;
+  border-radius: 10px;
+}

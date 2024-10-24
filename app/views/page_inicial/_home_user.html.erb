@@ -1,0 +1,42 @@
+<section>
+
+  <div class='home-user container'>
+    <img src="<%= current_user.avatar %>" class='img-user-home'/>
+    
+    <div class='info-user'>
+      <div>
+
+        <aside>
+          <h2 class='text-white'> <%= current_user.nome %> </h2>
+          <p class='text-white me-2 homer-bio-user'>
+            <%= current_user.bio %>
+          </p>
+        </aside>
+
+        <p class='date'> <%= current_user.created_at.strftime('%d/%m/%Y') %> </p>
+
+      </div>
+  
+      <ul class='nav nav-links-home'>
+        <li class='nav-item'> <%= link_to 'Perfil', "/perfil", class: 'nav-link' %> </li>
+        <li class='nav-item'> <%= link_to 'Settings', "#", class: 'nav-link' %> </li>
+        <li class='nav-item'> <%= link_to 'Publicações', "#", class: 'nav-link' %> </li>
+        <li class='linguagem'> <p>Ruby on Rails</p> </li>
+      </ul>
+  
+    </div>
+
+  </div>
+
+
+</section>
+
+<section class='container-principal'>
+
+  <%= render 'sobre' %>
+
+  <%= render 'all_users' %>
+
+  <%= render 'page_lateral' %>
+
+</section>

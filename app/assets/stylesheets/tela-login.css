@@ -1,0 +1,77 @@
+section.home-page {
+  padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  & form div input {
+    border: 1px solid #ffffff91;
+    border-radius: 50px;
+    width: 350px;
+    padding: 5px 10px;
+    outline: none;
+    background-color: transparent;
+    color: white;
+    text-align: center;
+  }
+
+  & input::placeholder {
+      color: #ffffff98;
+  }
+}
+
+div.pergunta {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div.info-users-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+  padding: 5px;
+  margin: 30px 0;
+}
+
+img.img-user {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+a.users, .new-user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+}
+
+div.imgs-publicacoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-evenly;
+}
+
+div.imgs-publicacoes div {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  & span {
+    background-color: black;
+    color: white;
+    padding: 5px;
+  }
+}
+
+div.imgs-publicacoes div > img {
+  width: 200px;
+  height: 250px;
+  border-radius: 5px 5px 0 0;
+}

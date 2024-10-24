@@ -1,0 +1,36 @@
+<div class='col-7 p-4 pt-info-perfil-user'>
+
+  <h3 class='text-white'> <%= current_user.nome %> </h3>
+  <p class='text-white'> <%= current_user.bio %> </p>
+
+  <hr class='text-white'/>
+
+  <aside class='pt-sugestoes'>
+  
+    <h4 class='text-white mb-5'>Pessoas que talvez conheça</h4>
+
+    <div>
+
+      <div class='sugestoes-perfil'>
+        <% @users_sugestoes.each do |user| %>
+          <div class='mb-4'>
+            <a href="/user/<%=user.id%>">
+              <img src="<%=user.avatar%>"/>
+              <p class='text-center text-white'> <%=user.nome%> </p>
+            </a>
+          </div>
+        <% end %>
+      </div>
+
+    </div>
+
+  </aside>
+
+  <form action='/bio' method='post'>
+    <div class='text-center'>
+      <input type='text' name='bio' class='form-control' placeholder="Bio"/>
+      <input type='submit' value='Salvar' class='btn btn-primary mt-2' style='width: 200px'/>
+    </div>
+  </form>
+
+</div>

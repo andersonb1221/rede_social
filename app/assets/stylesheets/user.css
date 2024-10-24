@@ -1,0 +1,103 @@
+/* INICIO DO PERFIL */
+.home-perfil {
+  background-color: #031c30;
+  padding: 10px 0;
+  
+  & aside {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+}
+
+  /* DIV Q ARMAZENA OS RENDER(3 PARTES DO PERFIL) */
+.pt-bottom-perfil {
+  display: flex;
+}
+
+  /* PARTE LEFT */
+.perfil-left {
+  border-right: 1px solid gray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.perfil-left img {
+  width: 250px;
+  height: 250px;
+  border-radius: 100%;
+  border: 5px solid gray;
+}
+
+.img-sugestao-perfil {
+  width: 70px !important;
+  height: 70px !important;
+  margin-bottom: 20px;
+  border-radius: 50%;
+}
+
+.info-user-perfil {
+  background-color: #0e0b29;
+  color: white;
+  font-size: 18px;
+  margin: 10px 0;
+  border-radius: 30px;
+  width: 200px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imgs-perfil {
+  width: 170px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* PARTE DO MEIO */
+.pt-sugestoes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sugestoes-perfil {
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  & img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+  }
+}
+
+/* PARTE DA DIREITA */
+.overflow-perfil {
+  overflow-x: auto;
+  height: 800px;
+  padding: 10px;
+}
+
+.img-post-perfil {
+  width: 90%;
+  height: 400px;
+}
+
+.img-user-comentarios {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50%;
+}
+
+.comentario {
+  display: flex;
+  justify-content: space-between;
+}
